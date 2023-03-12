@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/nav.ejs')  %> 
+
+    <div class="details content">
+        <h2><%= blog.title %></h2>
+        <div class="content">
+          <p><%= blog.body %></p>
+        </div>
+        <!-- <a class="delete" data-doc="< %= blog._id %>">delete</a> -->
+        <button class="delete" data-doc="<%= blog._id %>">delete</button>
+    </div>
+
+    <%- include('./partials/footer.ejs')  %> 
+
+    <!-- this runs on the website not the server "the Script tag"  -->
+    <script src="/js/details.js"></script>
+</body>
+</html>
