@@ -10,11 +10,11 @@
         <div class="row">
             <div class="col-lg-6 mx-auto mt-4">
                 <div class="card shadow">
-                    <div class="card-header bg-primary-subtle">
-                        <h3>Add new blog</h3>
+                    <div class="card-header bg-warning-subtle">
+                        <h3>Edit blog</h3>
                     </div>
                     <div class="card-body p-4">
-                        <form action='/blogs' method="POST">
+                        <form action="/blogs/edit/<%= blog._id %>" method="POST">
                             <%- include('./partials/form.ejs')  %>
                         </form>
                     </div>
@@ -27,5 +27,6 @@
 
     <!-- in order to attach the data to the body of the post request
     we need the NAME attribute -->
+    <!-- <script src="/js/edit.js"></script> -->
 </body>
 </html>

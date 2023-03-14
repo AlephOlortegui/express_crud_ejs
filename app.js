@@ -1,20 +1,14 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const mongoose = require('mongoose')
 const blogRouter = require('./routes/blogRoutes')
+const connectDB = require('./config/db')
 
 dotenv.config({path: './config/config.env'})
 
 const app = express();
 
 //Get access to the MongoDB
-const LINK = process.env.MONGO_URI;
-const PORT = process.env.PORT || 3000;
-mongoose.connect(LINK, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => {
-        app.listen(PORT, console.log(`Server running on port ${PORT} DB mongo connected!!`))
-    })
-    .catch(err => console.log(err.message))
+connectDB(app)
 
 //set engine
 app.set('view engine', 'ejs')
@@ -22,6 +16,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // to parse incoming x-www-form-urlencoded data | post method
 app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 
 app.get('/', (req,res) => res.redirect('/blogs'))
 app.get('/about', (req,res) => {

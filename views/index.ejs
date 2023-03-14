@@ -4,18 +4,28 @@
 <body>
     <%- include('./partials/nav.ejs')  %> 
 
-    <div class="blogs content">
-        <% if(blogs.length > 0){%>
-            <% blogs.forEach(blog => {  %> 
-                <a href="/blogs/<%=blog._id%>" class="single">
-                    <h3 class='title'> <%= blog.title %></h3>
-                    <p class='snippet'> <%= blog.snippet %> </p>
-                </a>
-                <br>
-            <% }) %>
-        <% } else {%>
-            <p>No blogs around Here</p>
-        <% } %> 
+    <div class="container">
+        <div class="row m-4">
+            <div class="col blogList">
+                <% if(blogs.length > 0){%>
+                    <h1 class="mb-4">My Blogs:</h1>
+                    <% blogs.forEach(blog => {  %> 
+                        <a href="/blogs/<%=blog._id%>" class="d-block border my-2 p-3">
+                            <h3 class='text-dark'> <%= blog.title %></h3>
+                            <p class='text-dark'> <%= blog.snippet %> </p>
+                        </a>
+                        <br>
+                    <% }) %>
+                    <div class="d-grid gap-2 col-4 mx-auto">
+                        <a href="/blogs/deleteAll"  class="btn btn-danger">Delete All Blogs</a>
+                    </div>
+                <% } else {%>
+                    <div class="alert alert-danger" role="alert">
+                        No blogs on the MongoDB . . . Go and Add a new Blog!
+                    </div>
+                <% } %> 
+            </div>
+        </div>
     </div>
 
     <%- include('./partials/footer.ejs')  %> 

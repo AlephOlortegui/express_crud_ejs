@@ -1,116 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-body{
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 20px;
-    font-family: 'Noto Serif', serif;
-    max-width: 900px;
-    background-color: #333;
-}
-p, h1, h2, h3, a, ul{
-    margin: 0;
-    padding: 0;
+.blogList a{
+    border-left: 6px solid crimson !important;
     text-decoration: none;
-    color: #fff;
 }
 
-/* nav & footer styles */
-nav{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    text-transform: uppercase;
-}
-nav ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-nav li{
-    list-style-type: none;
-    margin-left: 20px;
-}
-nav h1{
-    font-size: 3em;
-}
-nav p, nav a{
-    color: #ddd;
-    font-weight: 300;
-}
-footer{
-    color: #ddd;
-    text-align: center;
-    margin: 80px auto 20px;
-}
-h2{
-    margin-bottom: 40px;
-}
-h3{
-    text-transform: capitalize;
-    margin-bottom: 8px;
-}
-.content{
-    margin-left: 20px;
+.blogList a:hover h3{
+    color: crimson !important;
 }
 
-/* index styles */
-.blogs a{
-    display: block;
-    margin: 15px 0;
-    padding-left: 30px;
-    border-left: 6px solid crimson;
-}
-.blogs a:hover h3{
-    color: crimson;
+/* details */
+.details a{
+    position: absolute;
+    top: 0;
+    right: 3.5em;
+    padding: 8px;
 }
 
-/* details styles */
-.details{
-    position: relative;
-}
-.delete{
+.details button{
     position: absolute;
     top: 0;
     right: 0;
-    border-radius: 50%;
     padding: 8px;
 }
-.delete:hover{
-    cursor: pointer;
-    box-shadow: 1px 2px 3px rgba(255,255,255,0.2);
+
+/* 404 pages */
+.notFound{
+    position: relative;
+}
+.notFound h1,
+.notFound h6{
+    user-select: none;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
-/* create styles */
-.create-blog form{
-    max-width: 400px;
-    margin: 0 auto;
-}
-.create-blog input,
-.create-blog textarea{
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 8px;
-}
-.create-blog label{
-    display: block;
-    margin-top: 24px;
-}
-textarea{
-    height: 120px;
-}
-.create-blog button{
-    margin-top: 20px;
-    background: crimson;
-    color: white;
-    padding: 6px;
-    border: 0;
-    font-size: 1.2em;
-    cursor: pointer;
-}
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
-.not-found{
-    color: #fff;
+.notFound h1{
+    font-size: 18rem;
+}
+.notFound h6{
+    font-size: 4rem;
+    margin-top: -3rem;
+    margin-left: 1rem;
+}
+.notFound img{
+    position: absolute;
+    z-index: -1;
+}
+.notFound .browser_img{
+    top: 0;
+    left: 15%;
+}
+.notFound .robot_img{
+    right: 15%;
+    bottom: 0;
 }

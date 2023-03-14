@@ -6,13 +6,17 @@
 <body>
     <%- include('./partials/nav.ejs')  %> 
 
-    <div class="details content">
-        <h2><%= blog.title %></h2>
-        <div class="content">
-          <p><%= blog.body %></p>
+    <div class="container">
+        <div class="row m-4 justify-content-center">
+            <div class="col-8">
+                <div class="position-relative ms-3 details">
+                    <h2><%= blog.title %></h2>
+                    <p class="ms-3"><%= blog.body %></p>
+                    <a href="/blogs/edit/<%= blog._id %>" class="border border-success text-success rounded-circle" ><i class='bx bxs-edit-alt bx-sm'></i></a>
+                    <button class="delete btn btn-outline-danger" data-doc="<%= blog._id %>"><i class='bx bxs-trash bx-sm'></i></button>
+                </div>
+            </div>
         </div>
-        <!-- <a class="delete" data-doc="< %= blog._id %>">delete</a> -->
-        <button class="delete" data-doc="<%= blog._id %>">delete</button>
     </div>
 
     <%- include('./partials/footer.ejs')  %> 
