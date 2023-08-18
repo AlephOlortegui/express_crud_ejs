@@ -8,14 +8,16 @@
         <div class="row m-4">
             <div class="col blogList">
                 <% if(blogs.length > 0){%>
-                    <h1 class="mb-4">My Blogs:</h1>
+                    <h1 class="mb-4">My Posts:</h1>
+
                     <% blogs.forEach(blog => {  %> 
                         <a href="/blogs/<%=blog._id%>" class="d-block border my-2 p-3">
                             <h3 class='text-dark'> <%= blog.title %></h3>
                             <p class='text-dark'> <%= blog.snippet %> </p>
                         </a>
                         <br>
-                    <% }) %>
+                    <% }) %> 
+
                     <div class="d-grid gap-2 col-4 mx-auto">
                         <a href="/blogs/deleteAll"  class="btn btn-danger">Delete All Blogs</a>
                     </div>
@@ -28,6 +30,6 @@
         </div>
     </div>
 
-    <%- include('./partials/footer.ejs')  %> 
+    <%- include('./partials/footer.ejs')  %>
 </body>
 </html>

@@ -3,6 +3,7 @@ const Blog = require("../models/blog");
 const blog_index = async (req, res) => {
     try {
         const blogs = await Blog.find().sort({createdAt: -1})
+        //console.log(blogs) // [{},{},{}...] if we have posts otherwise []
         res.render('index',{myTitle: 'All Blogs', blogs})
     } catch (err) {
         console.log(err)
@@ -47,14 +48,6 @@ const patch_one_blog = async (req,res) => {
         console.error(err);
         res.status(500).send('Error updating user');
     }
-    /* const id = req.params.id;
-    console.log(req.body)
-    Blog.findByIdAndUpdate(id, req.body, {new: true})
-    .then(result => {
-        console.log(result)
-        // res.redirect('/blogs')
-    })
-    .catch(err => console.log(err)) */
 }
 
 const blog_create_get = (req, res) => {

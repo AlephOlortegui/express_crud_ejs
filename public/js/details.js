@@ -9,8 +9,7 @@ const trashcan = document.querySelector('button.delete');
           .catch(err => console.log(err));
     });
 
-
     /*
-          window.location.href = data.redirect
-          redirect is the JSON sent from the server "blogController.js"
-        */
+      window.location.href = data.redirect
+      redirect is the JSON sent from the server "blogController.js"
+    */
