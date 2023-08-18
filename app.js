@@ -16,7 +16,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 // to parse incoming x-www-form-urlencoded data | post method
 app.use(express.urlencoded({extended: true}))
-app.use(express.json())
+// app.use(express.json())
 
 app.get('/', (req,res) => res.redirect('/blogs'))
 app.get('/about', (req,res) => {

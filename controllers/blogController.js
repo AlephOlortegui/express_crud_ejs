@@ -44,7 +44,7 @@ const patch_one_blog = async (req,res) => {
         res.redirect('/blogs')
 
     } catch (err) {
-        console.error(error);
+        console.error(err);
         res.status(500).send('Error updating user');
     }
     /* const id = req.params.id;
